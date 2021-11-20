@@ -2,7 +2,7 @@
 
 CREATE TABLE factRecord (
     _id INTEGER PRIMARY KEY AUTOINCREMENT,
-    fact TEXT NOT NULL UNIQUE,
+    fact TEXT NOT NULL,
     length INTEGER AS Int NOT NULL,
     currentPage INTEGER AS Int NOT NULL,
     itemsPerPage INTEGER AS Int NOT NULL,

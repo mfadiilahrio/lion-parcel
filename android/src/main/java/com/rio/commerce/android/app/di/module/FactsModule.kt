@@ -8,10 +8,7 @@ import com.rio.commerce.android.app.fact.FactViewHolderFactory
 import com.rio.commerce.common.qualifier.FragmentScope
 import com.rio.commerce.common.qualifier.Host
 import com.rio.commerce.common.qualifier.HttpHeaders
-import com.rio.commerce.commonui.view.AdapterListener
-import com.rio.commerce.commonui.view.ListAdapter
-import com.rio.commerce.commonui.view.RecyclerViewAdapter
-import com.rio.commerce.commonui.view.ViewHolderFactory
+import com.rio.commerce.commonui.view.*
 import com.rio.commerce.core.base.domain.UseCaseImpl
 import com.rio.commerce.core.base.view.ListViewModel
 import com.rio.commerce.core.base.view.ListViewModelImpl
@@ -93,6 +90,14 @@ class FactsModule {
     @IntKey(0)
     fun provideViewHolder(): ViewHolderFactory {
         return FactViewHolderFactory()
+    }
+
+    @Provides
+    @FragmentScope
+    @IntoMap
+    @IntKey(ViewHolder.Type.LIST_LOADING)
+    internal fun provideLoadingViewHolder(): ViewHolderFactory {
+        return LoadingViewHolderFactory()
     }
 
 }
