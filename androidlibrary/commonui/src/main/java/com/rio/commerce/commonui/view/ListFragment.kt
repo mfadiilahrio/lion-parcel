@@ -127,7 +127,7 @@ abstract class ListFragment<Request, Item> : Fragment(),
                     val lastVisibleItem = manager.findLastVisibleItemPosition()
                     val page = mRequest?.page ?: 1
 
-                    if (!mIsRefreshing && totalItemCount <= lastVisibleItem + LOAD_LIST_THRESHOLD && page < 10) {
+                    if (!mIsRefreshing && totalItemCount <= lastVisibleItem + LOAD_LIST_THRESHOLD) {
                         loadMore()
                     }
                 }
