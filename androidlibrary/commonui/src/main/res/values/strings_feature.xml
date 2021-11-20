@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="title_show_image">Show Image</string>
+    <string name="title_gallery">Gallery</string>
+    <string name="title_transaction">Transaction</string>
+
+    <string name="downloading_x">Downloading %1$s&#8230;</string>
+    <string name="preparing_x">Preparing %1$s&#8230;</string>
+    <string name="installing_x">Installing %1$s&#8230;</string>
+    <string name="module_installation_failed">Installation failed, please try again.</string>
+</resources>

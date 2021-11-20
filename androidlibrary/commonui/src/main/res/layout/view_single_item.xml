@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginHorizontal="@dimen/view_item_margin"
+    android:layout_marginTop="@dimen/medium"
+    android:background="@drawable/selectable_grey_rounded_border">
+
+    <TextView
+        android:id="@+id/title"
+        style="@style/RegularBody2"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/view_item_margin"
+        android:maxLines="1"
+        app:layout_constraintBottom_toTopOf="@id/selected_item"
+        app:layout_constraintEnd_toStartOf="@id/arrow"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:text="One" />
+
+    <TextView
+        android:id="@+id/selected_item"
+        style="@style/RegularBody2"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="@dimen/view_item_margin"
+        android:maxLines="1"
+        android:textColor="@color/grey500"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@id/title"
+        app:layout_constraintStart_toStartOf="@id/title"
+        app:layout_constraintTop_toBottomOf="@id/title"
+        tools:text="one, two or three"
+        tools:visibility="visible" />
+
+    <ImageView
+        android:id="@+id/arrow"
+        android:layout_width="20dp"
+        android:layout_height="20dp"
+        android:layout_marginEnd="@dimen/view_item_margin"
+        android:contentDescription="@string/select"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/ic_arrow_next" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

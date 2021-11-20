@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <declare-styleable name="CustomButton">
+        <attr name="loadingText" format="reference|string" />
+    </declare-styleable>
+
+    <declare-styleable name="SettingView">
+        <attr name="text" format="reference|string" />
+        <attr name="showIndicator" format="reference|boolean" />
+    </declare-styleable>
+
+    <declare-styleable name="ChooseOTPMethodView">
+        <attr name="title" format="reference|string" />
+        <attr name="subtitle" format="reference|string" />
+        <attr name="otpIcon" format="reference|integer" />
+    </declare-styleable>
+
+    <declare-styleable name="LoadingView">
+        <attr name="message" format="reference|string" />
+    </declare-styleable>
+
+    <declare-styleable name="CurrencyEditText">
+        <attr name="priceFormat" format="reference|string" />
+        <attr name="allowEmpty" format="reference|boolean" />
+    </declare-styleable>
+
+    <declare-styleable name="CurrencyTextView">
+        <attr name="thousandSymbol" format="reference|string" />
+        <attr name="roundUpDecimalPlaces" format="reference|integer" />
+        <attr name="simplifiedPriceAfterLength" format="reference|integer" />
+        <attr name="from" format="reference|string" />
+        <attr name="to" format="reference|string" />
+    </declare-styleable>
+</resources>

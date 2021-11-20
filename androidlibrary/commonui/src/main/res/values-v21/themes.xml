@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <style name="Commerce.Button" parent="Commerce.Button.Base">
+        <item name="android:letterSpacing">0</item>
+    </style>
+
+    <style name="Commerce.Theme" parent="Commerce.Theme.Base">
+        <item name="android:statusBarColor">@android:color/darker_gray</item>
+    </style>
+
+    <style name="Commerce.Theme.NoActionBar.Transparent" parent="Commerce.Theme.NoActionBar">
+        <item name="android:windowTranslucentStatus">true</item>
+    </style>
+
+    <style name="Commerce.Button.Base" parent="Widget.MaterialComponents.Button">
+        <item name="android:textSize">@dimen/body_2</item>
+        <item name="android:fontFamily">@font/regular</item>
+        <item name="android:minHeight">@dimen/button_height</item>
+        <item name="textAllCaps">false</item>
+        <item name="cornerRadius">@dimen/button_corner_radius</item>
+        <item name="android:stateListAnimator">@null</item>
+    </style>
+</resources>

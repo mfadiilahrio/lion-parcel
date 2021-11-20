@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="api_host">https://catfact.ninja</string>
+    <string name="cache_directory">cache</string>
+    <string name="email_support">muhamadfrio@gmail.com</string>
+    <string name="email_customer_care">muhamadfrio@gmail.com</string>
+</resources>

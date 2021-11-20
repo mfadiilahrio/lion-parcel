@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="country">ID</string>
+    <string name="language">id</string>
+    <string name="currency_symbol">Rp</string>
+    <string name="price_format">Rp%,.0f</string>
+    <string name="dd_MMM_yyyy">dd MMM yyyy</string>
+    <string name="dd_MMM_yyyy_hh_mm">dd MMM yyyy, hh:mm</string>
+    <string name="yyyy_mm_dd">yyyy-MM-dd</string>
+    <string name="decimal_format">#,###</string>
+</resources>

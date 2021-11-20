@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">Lion</string>
+    <string name="logo">Logo</string>
+    <string name="on_boarding_1_subtitle"> </string>
+    <string name="on_boarding_1_title"> </string>
+    <string name="on_boarding_2_subtitle"> </string>
+    <string name="on_boarding_2_title"> </string>
+    <string name="on_boarding_3_subtitle"> </string>
+    <string name="on_boarding_3_title"> </string>
+</resources>

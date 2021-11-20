@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="h5">32sp</dimen>
+    <dimen name="h6">21sp</dimen>
+    <dimen name="text_small">12sp</dimen>
+    <dimen name="body_1">17sp</dimen>
+    <dimen name="body_2">15sp</dimen>
+    <dimen name="body_3">13sp</dimen>
+    <dimen name="body_4">11sp</dimen>
+    <dimen name="navigation_title">22dp</dimen>
+    <dimen name="button_corner_radius">25dp</dimen>
+    <dimen name="input_corner_radius">25dp</dimen>
+    <dimen name="button_height">60dp</dimen>
+    <dimen name="form_margin">20dp</dimen>
+    <dimen name="view_item_margin">15dp</dimen>
+
+    <dimen name="x_small">2dp</dimen>
+    <dimen name="small">4dp</dimen>
+    <dimen name="medium">8dp</dimen>
+    <dimen name="large">16dp</dimen>
+    <dimen name="x_large">24dp</dimen>
+    <dimen name="xx_large">32dp</dimen>
+</resources>

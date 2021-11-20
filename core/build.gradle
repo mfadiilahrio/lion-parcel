@@ -1,0 +1,116 @@
+apply plugin: 'kotlin-multiplatform'
+apply plugin: 'kotlinx-serialization'
+apply plugin: 'com.squareup.sqldelight'
+
+apply from: 'android.gradle'
+
+kotlin {
+    android()
+
+    targets {
+        final def iOSTarget = System.getenv('SDK_NAME')?.startsWith("iphoneos") ? presets.iosArm64 : presets.iosX64
+
+        fromPreset(iOSTarget, 'iOS') {
+            binaries {
+                framework('CommerceCore')
+            }
+        }
+    }
+
+    sourceSets {
+        commonMain {
+            dependencies {
+                implementation "org.jetbrains.kotlinx:kotlinx-serialization-core:$serialization_version"
+
+                implementation "com.soywiz.korlibs.klock:klock:$klock_version"
+
+                // Coroutines
+                implementation "org.jetbrains.kotlinx:kotlinx-coroutines-core:$coroutines_version"
+
+                // Cache
+                implementation "com.squareup.sqldelight:runtime:$sqldelight_version"
+
+                //Crypto
+                implementation "com.soywiz.korlibs.krypto:krypto:2.1.1"
+
+                // HTTP
+                implementation "io.ktor:ktor-client-core:$ktor_version"
+                implementation "io.ktor:ktor-client-json:$ktor_version"
+                implementation "io.ktor:ktor-client-logging:$ktor_version"
+                implementation "io.ktor:ktor-client-serialization:$ktor_version"
+
+                // Shared Preference
+                implementation "com.russhwolf:multiplatform-settings-no-arg:0.6.2"
+
+                // Reactive
+                implementation "com.badoo.reaktive:reaktive:$reactive_version"
+                implementation "com.badoo.reaktive:coroutines-interop:$reactive_version-nmtc"
+
+                // Logging
+                implementation "io.github.aakira:napier:$napier_version"
+            }
+        }
+        commonTest {
+            dependencies {
+                implementation 'org.jetbrains.kotlin:kotlin-test-common'
+                implementation 'org.jetbrains.kotlin:kotlin-test-annotations-common'
+            }
+        }
+        androidTest {
+            dependencies {
+                implementation 'org.jetbrains.kotlin:kotlin-test-common'
+                implementation 'org.jetbrains.kotlin:kotlin-test-junit'
+            }
+        }
+        iOSMain {
+            dependencies {
+                // Cache
+                implementation "com.squareup.sqldelight:native-driver:$sqldelight_version"
+
+                // HTTP
+                implementation "io.ktor:ktor-client-ios:$ktor_version"
+            }
+        }
+        all {
+            languageSettings {
+                progressiveMode = true
+                useExperimentalAnnotation('kotlin.Experimental')
+            }
+        }
+    }
+}
+
+sqldelight {
+    CommerceDatabase {
+        packageName = "com.rio.commerce.core.sql"
+        sourceFolders = ["sqldelight"]
+        schemaOutputDirectory = file("src/commonMain/sqldelight/databases")
+    }
+}
+
+
+// workaround for https://youtrack.jetbrains.com/issue/KT-27170
+configurations {
+    compileClasspath
+}
+
+// Xcode-specific
+task packForXCode(type: Sync) {
+    final File frameworkDir = new File(buildDir, "xcode-frameworks")
+    final String configuration = project.findProperty("XCODE_CONFIGURATION")?.toUpperCase()
+    final String mode = (configuration?.startsWith('RELEASE')) ? 'RELEASE' : 'DEBUG'
+    final def framework = kotlin.targets.iOS.binaries.getFramework("CommerceCore", mode)
+
+    inputs.property "mode", mode
+    dependsOn framework.linkTask
+
+    from { framework.outputFile.parentFile }
+    into frameworkDir
+
+    doLast {
+        new File(frameworkDir, 'gradlew').with {
+            text = "#!/bin/bash\nexport 'JAVA_HOME=${System.getProperty("java.home")}'\ncd '${rootProject.rootDir}'\n./gradlew \$@\n"
+            setExecutable(true)
+        }
+    }
+}

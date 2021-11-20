@@ -1,0 +1,12 @@
+ext.flavorConfig = {
+
+    flavorDimensions "default"
+    productFlavors {
+        staging {
+            versionNameSuffix "-staging"
+        }
+        production {
+            isDefault.set(true)
+        }
+    }
+}

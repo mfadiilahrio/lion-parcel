@@ -1,0 +1,27 @@
+rootProject.name = 'Lion'
+
+include ':android'
+include ':core'
+
+include ':library_common'
+include ':library_commonui'
+include ':library_data'
+
+include ':feature_showimage'
+include ':feature_gallery'
+include ':feature_transaction'
+
+include ':scrollgalleryview'
+include ':scrollgalleryview-glideloader'
+
+project(':feature_showimage').projectDir = new File('dfm/showimage')
+project(':feature_gallery').projectDir = new File('dfm/gallery')
+
+project(':feature_transaction').projectDir = new File('dfm/transaction')
+
+project(':library_common').projectDir = new File('androidlibrary/common')
+project(':library_commonui').projectDir = new File('androidlibrary/commonui')
+project(':library_data').projectDir = new File('androidlibrary/data')
+
+project(':scrollgalleryview').projectDir = new File('dfm/scrollgalleryview/library')
+project(':scrollgalleryview-glideloader').projectDir = new File('dfm/scrollgalleryview/glide-loader')

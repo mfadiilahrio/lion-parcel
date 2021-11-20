@@ -1,0 +1,28 @@
+
+
+CREATE TABLE factRecord (
+    _id INTEGER PRIMARY KEY AUTOINCREMENT,
+    fact TEXT NOT NULL UNIQUE,
+    length INTEGER AS Int NOT NULL,
+    currentPage INTEGER AS Int NOT NULL,
+    itemsPerPage INTEGER AS Int NOT NULL,
+    totalPages INTEGER AS Int NOT NULL,
+    itemCount INTEGER AS Int NOT NULL,
+    totalItems INTEGER AS Int NOT NULL,
+    timestamp REAL NOT NULL
+);
+
+insert:
+INSERT INTO factRecord(
+fact, length,
+currentPage, itemsPerPage,
+totalPages, itemCount, totalItems,
+timestamp)
+VALUES (?, ?, ?, ?, ? ,?, ?, ?);
+
+selectAll:
+SELECT * FROM factRecord;
+
+
+selectByPage:
+SELECT * FROM factRecord WHERE currentPage = ?;

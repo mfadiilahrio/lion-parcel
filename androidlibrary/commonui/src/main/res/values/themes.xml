@@ -1,0 +1,317 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <style name="Commerce.Theme.Base" parent="Theme.MaterialComponents.DayNight">
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryVariant">@color/colorPrimary</item>
+        <item name="colorOnPrimary">@color/colorPrimaryText</item>
+        <item name="colorSurface">@color/colorPrimary</item>
+        <item name="colorOnSurface">@color/colorPrimaryText</item>
+        <item name="colorControlActivated">@color/colorPrimaryDark</item>
+
+        <item name="android:colorBackground">@color/background</item>
+        <item name="android:actionBarStyle">@style/Commerce.ActionBar</item>
+        <item name="android:textViewStyle">@style/Commerce.TextView</item>
+        <item name="android:radioButtonStyle">@style/Commerce.RadioButton</item>
+
+        <item name="actionBarStyle">@style/Commerce.ActionBar</item>
+        <item name="toolbarStyle">@style/Commerce.Toolbar</item>
+        <item name="radioButtonStyle">@style/Commerce.RadioButton</item>
+        <item name="pinViewStyle">@style/Commerce.OTP</item>
+
+        <item name="bottomSheetDialogTheme">@style/Commerce.BottomSheet</item>
+        <item name="materialCalendarTheme">@style/Commerce.Calendar</item>
+        <item name="materialAlertDialogTheme">@style/Commerce.DialogTheme</item>
+        <item name="textInputStyle">@style/Commerce.TextInputLayout</item>
+        <item name="bottomNavigationStyle">@style/Commerce.BottomNavigationView</item>
+    </style>
+
+    <style name="Commerce.Theme" parent="Commerce.Theme.Base" />
+
+    <style name="Commerce.Theme.NoActionBar" parent="Commerce.Theme">
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+    </style>
+
+    <style name="Commerce.Theme.NoActionBar.Transparent" parent="Commerce.Theme.NoActionBar" />
+
+    <!-- OTP Theme -->
+    <style name="Commerce.OTP" parent="@style/PinWidget.PinView">
+        <item name="android:fontFamily">@font/bold</item>
+        <item name="android:textSize">@dimen/body_1</item>
+        <item name="android:inputType">number</item>
+        <item name="android:itemBackground">@color/grey200</item>
+        <item name="itemRadius">2dp</item>
+        <item name="itemCount">6</item>
+        <item name="lineWidth">1.5dp</item>
+        <item name="lineColor">@color/otp_line</item>
+    </style>
+
+    <!-- Action Bar Theme -->
+    <style name="Commerce.ActionBar" parent="@style/Widget.MaterialComponents.ActionBar.Solid">
+        <item name="android:background">@color/colorPrimary</item>
+        <item name="android:titleTextStyle">@style/Commerce.ActionBar.Title</item>
+        <item name="android:subtitleTextStyle">@style/Commerce.ActionBar.Subtitle</item>
+
+        <item name="background">@color/colorPrimary</item>
+        <item name="titleTextStyle">@style/Commerce.ActionBar.Title</item>
+        <item name="subtitleTextStyle">@style/Commerce.ActionBar.Subtitle</item>
+    </style>
+
+    <style name="Commerce.ActionBar.Title" parent="@style/TextAppearance.AppCompat.Widget.ActionBar.Title">
+        <item name="android:textColor">@color/colorPrimaryText</item>
+        <item name="android:textSize">@dimen/body_1</item>
+        <item name="android:fontFamily">@font/regular</item>
+        <item name="android:textAllCaps">true</item>
+    </style>
+
+    <style name="Commerce.ActionBar.Subtitle" parent="@style/TextAppearance.AppCompat.Widget.ActionBar.Subtitle">
+        <item name="android:textColor">@color/colorPrimaryText</item>
+        <item name="android:textSize">@dimen/body_2</item>
+        <item name="android:fontFamily">@font/regular</item>
+    </style>
+
+    <!-- Toolbar Theme -->
+    <style name="Commerce.Toolbar" parent="@style/Widget.MaterialComponents.Toolbar">
+        <item name="contentInsetStartWithNavigation">0dp</item>
+        <item name="titleTextAppearance">@style/Commerce.Toolbar.Title</item>
+        <item name="subtitleTextAppearance">@style/Commerce.Toolbar.Subtitle</item>
+    </style>
+
+    <style name="Commerce.Toolbar.Title" parent="TextAppearance.Widget.AppCompat.Toolbar.Title">
+        <item name="android:textColor">@color/colorPrimaryText</item>
+        <item name="android:textSize">@dimen/body_1</item>
+        <item name="android:fontFamily">@font/regular</item>
+        <item name="android:textAllCaps">true</item>
+    </style>
+
+    <style name="Commerce.Toolbar.Subtitle" parent="TextAppearance.Widget.AppCompat.Toolbar.Subtitle">
+        <item name="android:textColor">@color/grey600</item>
+        <item name="android:textSize">@dimen/body_2</item>
+        <item name="android:fontFamily">@font/regular</item>
+    </style>
+
+    <style name="Commerce.TextView" parent="TextAppearance.AppCompat">
+        <item name="android:textColor">@color/colorPrimaryText</item>
+    </style>
+
+    <!-- BottomNavigationView Theme -->
+    <style name="Commerce.BottomNavigationView" parent="Widget.MaterialComponents.BottomNavigationView">
+        <item name="itemTextAppearanceActive">@style/BottomNavigationViewTextStyle</item>
+        <item name="itemTextAppearanceInactive">@style/BottomNavigationViewTextStyle</item>
+        <item name="itemIconTint">@drawable/bottom_bar_selector</item>
+        <item name="itemTextColor">@drawable/bottom_bar_selector</item>
+        <item name="labelVisibilityMode">labeled</item>
+    </style>
+
+    <style name="BottomNavigationViewTextStyle">
+        <item name="android:textSize">@dimen/body_4</item>
+        <item name="android:fontFamily">@font/light</item>
+    </style>
+
+    <!-- Custom Button Theme -->
+    <style name="Commerce.Button.Base" parent="Widget.MaterialComponents.Button">
+        <item name="android:textSize">@dimen/body_2</item>
+        <item name="android:fontFamily">@font/regular</item>
+        <item name="android:minHeight">@dimen/button_height</item>
+        <item name="textAllCaps">false</item>
+        <item name="cornerRadius">@dimen/button_corner_radius</item>
+    </style>
+
+    <style name="Commerce.Button" parent="Commerce.Button.Base" />
+
+    <style name="Commerce.PrimaryButton" parent="Commerce.Button">
+        <item name="android:textColor">@android:color/white</item>
+        <item name="rippleColor">@color/grey500</item>
+        <item name="backgroundTint">@color/primary_button_background</item>
+    </style>
+
+    <!-- TextInputLayout Theme -->
+    <style name="Commerce.TextInputLayout" parent="Widget.MaterialComponents.TextInputLayout.OutlinedBox">
+        <item name="hintEnabled">false</item>
+        <item name="boxStrokeColor">@color/text_input_box_outlined_box</item>
+        <item name="boxStrokeWidth">0dp</item>
+        <item name="boxCornerRadiusTopStart">@dimen/input_corner_radius</item>
+        <item name="boxCornerRadiusTopEnd">@dimen/input_corner_radius</item>
+        <item name="boxCornerRadiusBottomStart">@dimen/input_corner_radius</item>
+        <item name="boxCornerRadiusBottomEnd">@dimen/input_corner_radius</item>
+        <item name="errorTextColor">@color/error</item>
+        <item name="errorIconTint">@color/error</item>
+        <item name="errorTextAppearance">@style/Commerce.TextInputEditText.Error</item>
+        <item name="materialThemeOverlay">@style/Commerce.TextInputEditText.OutlinedBox</item>
+    </style>
+
+    <style name="Commerce.TextInputEditText.Error" parent="TextAppearance.AppCompat">
+        <item name="android:fontFamily">@font/regular</item>
+    </style>
+
+    <style name="Commerce.TextInputEditText.OutlinedBox" parent="ThemeOverlay.MaterialComponents.TextInputEditText.OutlinedBox">
+        <item name="colorControlActivated">@color/grey500</item>
+        <item name="android:fontFamily">@font/regular</item>
+        <item name="editTextStyle">@style/Commerce.TextInputEditText.FilledBox</item>
+    </style>
+
+    <style name="Commerce.TextInputEditText.FilledBox" parent="@style/Widget.MaterialComponents.TextInputEditText.FilledBox">
+        <item name="android:paddingTop">12dp</item>
+        <item name="android:paddingBottom">12dp</item>
+        <item name="android:background">@drawable/background_text_input</item>
+    </style>
+
+    <!-- MaterialAlertDialog Theme -->
+    <style name="Commerce.DialogTheme" parent="ThemeOverlay.MaterialComponents.MaterialAlertDialog">
+        <item name="materialAlertDialogTitleTextStyle">@style/Commerce.DialogTitle</item>
+        <item name="materialAlertDialogBodyTextStyle">@style/Commerce.DialogBody</item>
+
+        <item name="buttonBarPositiveButtonStyle">@style/Commerce.Dialog.Button.Positive</item>
+        <item name="buttonBarNegativeButtonStyle">@style/Commerce.Dialog.Button.Negative</item>
+        <item name="buttonBarNeutralButtonStyle">@style/Commerce.Dialog.Button.Neutral</item>
+    </style>
+
+    <style name="Commerce.DialogTitle" parent="MaterialAlertDialog.MaterialComponents.Title.Text">
+        <item name="android:textColor">@color/colorPrimaryText</item>
+        <item name="android:textSize">20sp</item>
+        <item name="android:fontFamily">@font/medium</item>
+    </style>
+
+    <style name="Commerce.DialogBody" parent="MaterialAlertDialog.MaterialComponents.Body.Text">
+        <item name="android:textColor">@color/colorPrimaryText</item>
+        <item name="android:fontFamily">@font/regular</item>
+        <item name="android:textSize">15sp</item>
+    </style>
+
+    <style name="Commerce.Dialog.Button" parent="Widget.AppCompat.Button.ButtonBar.AlertDialog">
+        <item name="backgroundTint">@android:color/transparent</item>
+        <item name="android:fontFamily">@font/bold</item>
+    </style>
+
+    <style name="Commerce.Dialog.Button.Positive" parent="Commerce.Dialog.Button">
+        <item name="android:textColor">@color/colorPrimaryText</item>
+        <item name="rippleColor">@color/grey500</item>
+    </style>
+
+    <style name="Commerce.Dialog.Button.Negative" parent="Commerce.Dialog.Button">
+        <item name="android:textColor">@color/error</item>
+        <item name="rippleColor">@color/grey500</item>
+    </style>
+
+    <style name="Commerce.Dialog.Button.Neutral" parent="Commerce.Dialog.Button">
+        <item name="android:textColor">@color/grey500</item>
+        <item name="rippleColor">@color/grey500</item>
+    </style>
+
+    <style name="Commerce.RadioButton" parent="Widget.AppCompat.CompoundButton.RadioButton">
+        <item name="fontFamily">@font/medium</item>
+    </style>
+
+    <!-- Bottom Sheet -->
+    <style name="Commerce.BottomSheet" parent="Theme.MaterialComponents.BottomSheetDialog">
+        <item name="bottomSheetStyle">@style/Commerce.Modal</item>
+    </style>
+
+    <style name="Commerce.Modal" parent="Widget.MaterialComponents.BottomSheet.Modal">
+        <item name="android:background">@drawable/background_bottom_sheet_dialog</item>
+    </style>
+
+    <!-- Calendar Theme -->
+    <style name="Commerce.Calendar" parent="ThemeOverlay.MaterialComponents.MaterialCalendar">
+        <item name="materialCalendarStyle">@style/Commerce.Calendar.Style</item>
+        <item name="materialButtonStyle">@style/Commerce.Calendar.Button.Text</item>
+
+        <item name="buttonBarNegativeButtonStyle">@style/Commerce.Calendar.Button.Negative</item>
+        <item name="buttonBarPositiveButtonStyle">@style/Commerce.Calendar.Button.Positive</item>
+
+        <item name="materialCalendarHeaderLayout">@style/Commerce.Calendar.Header.Layout</item>
+        <item name="materialCalendarHeaderDivider">@style/Commerce.Calendar.Header.Divider</item>
+        <item name="materialCalendarHeaderTitle">@style/Commerce.Calendar.Header.Title</item>
+        <item name="materialCalendarHeaderSelection">@style/Commerce.Calendar.Header.Selection
+        </item>
+        <item name="materialCalendarHeaderConfirmButton">
+            @style/Commerce.Calendar.Header.Button.Confirm
+        </item>
+        <item name="materialCalendarHeaderToggleButton">
+            @style/Commerce.Calendar.Header.Button.Toggle
+        </item>
+    </style>
+
+    <style name="Commerce.Calendar.Style" parent="Widget.MaterialComponents.MaterialCalendar">
+        <item name="dayStyle">@style/Commerce.Calendar.Day</item>
+        <item name="daySelectedStyle">@style/Commerce.Calendar.Day.Selected</item>
+        <item name="dayTodayStyle">@style/Commerce.Calendar.Day.Today</item>
+
+        <item name="yearStyle">@style/Commerce.Calendar.Year</item>
+        <item name="yearSelectedStyle">@style/Commerce.Calendar.Year.Selected</item>
+    </style>
+
+    <style name="Commerce.Calendar.Header.Layout" parent="@style/Widget.MaterialComponents.MaterialCalendar.HeaderLayout">
+        <item name="android:background">@color/colorPrimaryDark</item>
+    </style>
+
+    <style name="Commerce.Calendar.Header.Title" parent="Widget.MaterialComponents.MaterialCalendar.HeaderTitle">
+        <item name="android:textColor">@color/colorPrimary</item>
+        <item name="android:fontFamily">@font/bold</item>
+        <item name="autoSizeMaxTextSize">12sp</item>
+    </style>
+
+    <style name="Commerce.Calendar.Header.Selection" parent="Widget.MaterialComponents.MaterialCalendar.HeaderSelection">
+        <item name="android:textColor">@color/colorPrimary</item>
+        <item name="android:fontFamily">@font/medium</item>
+        <item name="android:textSize">@dimen/h5</item>
+    </style>
+
+    <style name="Commerce.Calendar.Header.Button.Confirm" parent="Widget.MaterialComponents.MaterialCalendar.HeaderConfirmButton">
+        <item name="android:textColor">@color/colorPrimary</item>
+        <item name="rippleColor">@color/grey300</item>
+    </style>
+
+    <style name="Commerce.Calendar.Header.Button.Toggle" parent="Widget.MaterialComponents.MaterialCalendar.HeaderToggleButton">
+        <item name="android:background">@android:color/transparent</item>
+        <item name="android:tint">@color/colorPrimary</item>
+    </style>
+
+    <style name="Commerce.Calendar.Header.Divider" parent="@style/Widget.MaterialComponents.MaterialCalendar.HeaderLayout">
+        <item name="android:background">@color/colorPrimary</item>
+    </style>
+
+    <style name="Commerce.Calendar.Day.Selected" parent="Widget.MaterialComponents.MaterialCalendar.Day.Selected">
+        <item name="itemFillColor">@color/colorPrimaryDark</item>
+        <item name="itemTextColor">@color/colorPrimary</item>
+    </style>
+
+    <style name="Commerce.Calendar.Day.Today" parent="Widget.MaterialComponents.MaterialCalendar.Day.Today">
+        <item name="itemStrokeColor">@color/colorPrimaryDark</item>
+        <item name="itemStrokeWidth">1dp</item>
+    </style>
+
+    <style name="Commerce.Calendar.Day" parent="Widget.MaterialComponents.MaterialCalendar.Day">
+
+    </style>
+
+    <style name="Commerce.Calendar.Year" parent="Widget.MaterialComponents.MaterialCalendar.Year"></style>
+
+    <style name="Commerce.Calendar.Year.Selected" parent="Widget.MaterialComponents.MaterialCalendar.Year.Selected">
+        <item name="itemFillColor">@color/colorPrimaryDark</item>
+        <item name="itemTextColor">@color/colorPrimary</item>
+    </style>
+
+    <style name="Commerce.Calendar.Button.Negative" parent="Widget.MaterialComponents.Button.TextButton.Dialog">
+        <item name="android:textColor">@color/error</item>
+        <item name="android:fontFamily">@font/bold</item>
+    </style>
+
+    <style name="Commerce.Calendar.Button.Positive" parent="Widget.MaterialComponents.Button.TextButton.Dialog">
+        <item name="android:textColor">@color/colorPrimaryText</item>
+        <item name="android:fontFamily">@font/bold</item>
+    </style>
+
+    <style name="Commerce.Calendar.Button.Text" parent="Widget.MaterialComponents.Button">
+        <item name="materialThemeOverlay">@style/Commerce.Calendar.Button.Overlay</item>
+        <item name="android:textColor">@color/colorPrimaryDark</item>
+        <item name="android:fontFamily">@font/bold</item>
+        <item name="iconTint">@color/colorPrimaryText</item>
+    </style>
+
+    <style name="Commerce.Calendar.Button.Overlay" parent="">
+        <item name="colorPrimary">@color/grey100</item>
+    </style>
+
+</resources>

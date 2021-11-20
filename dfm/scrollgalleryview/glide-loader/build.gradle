@@ -1,0 +1,41 @@
+apply plugin: 'com.android.library'
+
+android {
+    compileSdkVersion project.compile_sdk_version
+    buildToolsVersion project.build_tools_version
+
+    defaultConfig {
+        minSdkVersion project.min_sdk_version
+        targetSdkVersion project.target_sdk_version
+        versionCode 6
+        versionName "1.2.9"
+
+        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+
+}
+
+dependencies {
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+
+    implementation "androidx.appcompat:appcompat:$app_compat_version"
+
+    testImplementation "junit:junit:$junit_version"
+    androidTestImplementation "androidx.test.ext:junit:$ext_junit_version"
+    androidTestImplementation "androidx.test.espresso:espresso-core:$espresso_version"
+
+    implementation("com.github.bumptech.glide:glide:$glide_version") {
+        exclude group: 'com.android.support'
+    }
+
+    annotationProcessor "com.github.bumptech.glide:compiler:$glide_version"
+
+    implementation project(':scrollgalleryview')
+}
